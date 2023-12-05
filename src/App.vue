@@ -25,7 +25,7 @@ export default {
     return {
       ToDoItems:[
         { id:uniqueId("to-do"),label: "Learn Vue", done: false},
-        { id:uniqueId("to-do"),label: "Create a Vue project with the CLi", done: true},
+        { id:uniqueId("to-do"),label: "Create a Vue project with the CLI", done: true},
         { id:uniqueId("to-do"),label: "Have fun", done: true},
         { id:uniqueId("to-do"),label: "Create a to-do list", done: false},
 
