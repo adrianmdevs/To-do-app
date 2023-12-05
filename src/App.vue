@@ -3,15 +3,17 @@
   <div id="app">
     <h1>My To-Do List</h1>
     <ul>
-      <li>
-        <to-do-item></to-do-item>
+      <li v-for="item in ToDoItems" :key="item.id">
+        <to-do-item label="item.label" :done="item.done"></to-do-item>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import uniqueId from 'lodash.uniqueid';
  import ToDoItem from './components/ToDoItem.vue';
+ 
 
 
 export default {
@@ -19,8 +21,19 @@ export default {
   components:{
     ToDoItem,
   },
+  data(){
+    return {
+      ToDoItems:[
+        { id:uniqueId("to-do"),label: "Learn Vue", done: false},
+        { id:uniqueId("to-do"),label: "Create a Vue project with the CLi", done: true},
+        { id:uniqueId("to-do"),label: "Have fun", done: true},
+        { id:uniqueId("to-do"),label: "Create a to-do list", done: false},
+
+      ],
+    };
+  },
  
-}
+};
 </script>
 
 <style>
